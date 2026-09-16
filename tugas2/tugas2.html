@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tugas 2 - Amara Dwi Natarin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ================= WARNA ================= */
+
+        :root {
+            --pink-light: #f8d2df;
+            --pink: #efa9c0;
+            --pink-deep: #d47798;
+            --pink-dark: #a85074;
+            --nav-bg: #8a3e5c;
+            --cream: #fffaf5;
+            --note: #fff0d6;
+            --text-dark: #4a2a3b;
+            --text-soft: #7a5b69;
+        }
+
+
+        /* ================= DASAR ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--pink-light);
+            color: var(--text-dark);
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            background: var(--nav-bg);
+            min-height: 75px;
+            padding: 0 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #f8dce6;
+            text-decoration: none;
+
+            font-size: 0.95rem;
+            font-weight: 600;
+
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        nav a.active {
+            color: white;
+            border-bottom: 3px solid white;
+            padding-bottom: 8px;
+        }
+
+
+        /* ================= HOME / HERO ================= */
+
+        .hero {
+            min-height: 440px;
+
+            background: linear-gradient(
+                145deg,
+                var(--pink-dark),
+                var(--pink-deep),
+                var(--pink)
+            );
+
+            padding: 60px 20px 85px;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            color: #321526;
+        }
+
+        .star-1 {
+            top: 50px;
+            left: 8%;
+            font-size: 1.5rem;
+        }
+
+        .star-2 {
+            top: 70px;
+            right: 9%;
+            font-size: 1.1rem;
+        }
+
+        .photo {
+            width: 175px;
+            height: 175px;
+
+            object-fit: cover;
+            border-radius: 50%;
+
+            border: 6px solid var(--cream);
+
+            box-shadow:
+                0 8px 20px rgba(80, 20, 50, 0.2);
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: "Fraunces", serif;
+
+            font-size: 3rem;
+
+            color: var(--cream);
+
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+
+            color: #ffeef4;
+
+            letter-spacing: 3px;
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+        }
+
+        .greeting {
+            font-size: 1rem;
+
+            color: #fff5f8;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= WAVE ================= */
+
+        .wave {
+            position: absolute;
+
+            bottom: -2px;
+            left: 0;
+
+            width: 100%;
+            height: 65px;
+        }
+
+        .wave path {
+            fill: var(--pink-light);
+        }
+
+
+        /* ================= MAIN ================= */
+
+        main {
+            width: 100%;
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 60px 30px 80px;
+        }
+
+
+        /* ================= CARD ================= */
+
+        .card {
+            position: relative;
+
+            padding: 35px 40px;
+
+            margin-bottom: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 12px 30px rgba(100, 40, 65, 0.16);
+
+            scroll-margin-top: 90px;
+        }
+
+        .biodata {
+            background: var(--cream);
+        }
+
+        .about {
+            background: var(--note);
+        }
+
+        .contact {
+            background: var(--cream);
+        }
+
+
+        /* ================= HIASAN TAPE ================= */
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            top: -10px;
+
+            width: 75px;
+            height: 25px;
+
+            border-radius: 3px;
+
+            opacity: 0.8;
+        }
+
+        .biodata::before {
+            left: 40px;
+
+            background: #e79ab4;
+
+            transform: rotate(-4deg);
+        }
+
+        .about::before {
+            right: 40px;
+
+            background: #d47798;
+
+            transform: rotate(4deg);
+        }
+
+        .contact::before {
+            left: 45px;
+
+            background: #e79ab4;
+
+            transform: rotate(-3deg);
+        }
+
+
+        /* ================= JUDUL CARD ================= */
+
+        .card-title {
+            font-size: 1.1rem;
+
+            font-weight: 700;
+
+            color: var(--pink-dark);
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* ================= BIODATA ================= */
+
+        .row {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 13px 0;
+
+            border-bottom: 1px dashed #ead9df;
+
+            font-size: 1rem;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: 700;
+        }
+
+        .value {
+            color: var(--text-soft);
+
+            text-align: right;
+        }
+
+
+        /* ================= ABOUT ME ================= */
+
+        .description {
+            font-size: 1rem;
+
+            color: #6b5748;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f3b8cb;
+
+            color: #7a2e4a;
+
+            font-size: 0.85rem;
+
+            font-weight: 600;
+
+            padding: 8px 15px;
+
+            border-radius: 20px;
+
+            transition: 0.2s;
+        }
+
+        .tag:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            background: #fbe8ed;
+
+            border-radius: 12px;
+
+            padding: 13px 16px;
+
+            text-decoration: none;
+
+            color: var(--text-dark);
+
+            font-size: 0.95rem;
+
+            transition: 0.2s;
+        }
+
+        .contact-item:hover {
+            background: var(--pink);
+
+            transform: translateX(4px);
+        }
+
+        .icon {
+            font-size: 1.1rem;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: var(--nav-bg);
+
+            color: var(--pink-light);
+
+            text-align: center;
+
+            padding: 20px;
+
+            font-size: 0.85rem;
+        }
+
+
+        /* ================= HP ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.82rem;
+            }
+
+            .hero {
+                min-height: 430px;
+
+                padding-top: 55px;
+            }
+
+            .photo {
+                width: 165px;
+                height: 165px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+
+                letter-spacing: 2px;
+            }
+
+            .greeting {
+                font-size: 0.9rem;
+
+                padding: 0 20px;
+            }
+
+            main {
+                padding: 45px 20px 60px;
+            }
+
+            .card {
+                padding: 30px 25px;
+            }
+
+            .row {
+                font-size: 0.9rem;
+            }
+
+            .description {
+                font-size: 0.9rem;
+            }
+        }
+
+
+        /* ================= HP KECIL ================= */
+
+        @media (max-width: 500px) {
+
+            nav ul {
+                gap: 0.8rem;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 25px 20px;
+            }
+
+            .row {
+                font-size: 0.85rem;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                🌸
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#home" class="active">Home</a>
+                </li>
+
+                <li>
+                    <a href="#biodata">Biodata</a>
+                </li>
+
+                <li>
+                    <a href="#about">About Me</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+
+        </nav>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero" id="home">
+
+            <div class="star star-1">
+                ✦
+            </div>
+
+            <div class="star star-2">
+                ✧
+            </div>
+
+
+            <!-- Ganti foto.jpg dengan nama foto kamu -->
+
+            <img
+                src="foto-saya.jpg"
+                alt="Foto Amara"
+                class="photo"
+            >
+
+
+            <h1>
+                Amara Dwi Natarin
+            </h1>
+
+            <p class="subtitle">
+                MAHASISWA SISTEM INFORMASI
+            </p>
+
+            <p class="greeting">
+                Halo! Selamat datang di halaman kecilku. 
+                Di sini aku berbagi sedikit tentang diriku, hal hal yang aku suka,
+                dan beberapa cerita sederhana dari keseharianku
+                ✦
+            </p>
+
+
+            <!-- Wave -->
+
+            <svg
+                class="wave"
+                viewBox="0 0 1440 120"
+                preserveAspectRatio="none"
+            >
+
+                <path
+                    d="M0,70 C240,20 420,100 700,70 C980,40 1140,90 1440,50 L1440,120 L0,120 Z">
+                </path>
+
+            </svg>
+
+        </section>
+
+    </header>
+
+
+
+    <!-- ================= ISI ================= -->
+
+    <main>
+
+
+        <!-- BIODATA -->
+
+        <section
+            class="card biodata"
+            id="biodata"
+        >
+
+            <h2 class="card-title">
+                📋 BIODATA
+            </h2>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Nama
+                </span>
+
+                <span class="value">
+                    Amara Dwi Natarin
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    TTL
+                </span>
+
+                <span class="value">
+                    Nganjuk, 26 Agustus 2005
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    NPM
+                </span>
+
+                <span class="value">
+                    2513020050
+                </span>
+
+            </div>
+
+
+            <div class="row">
+
+                <span class="label">
+                    Alamat
+                </span>
+
+                <span class="value">
+                    Pacekulon, Pace, Nganjuk
+                </span>
+
+            </div>
+
+
+            <div class="row">
+                
+                <span class="label">
+                    Program Studi
+                </span>
+
+                <span class="value">
+                    Sistem Informasi
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ABOUT ME -->
+
+        <section
+            class="card about"
+            id="about"
+        >
+
+            <h2 class="card-title">
+                ☁️ ABOUT ME
+            </h2>
+
+
+            <p class="description">
+
+                Hai, aku Amara. Aku adalah mahasiswa Sistem Informasi
+                yang sedang menikmati proses belajar dan mencoba berbagai
+                hal baru selama masa kuliah. Menurutku, kuliah bukan hanya 
+                tentang belajar di kelas, tapi juga tentang mendapatkan pengalaman
+                dan mengenal banyak hal baru.
+
+            </p>
+
+            <p class="description">
+                Di waktu luang, aku suka melakukan hal-hal sederhana seperti
+                mendengarkan musik, membaca, jalan jalan, atau sekedar menikmati waktu 
+                luang dengan bersantai. Aku juga senang ketika bisa mencoba sesuatu yang 
+                sebelumnya belum pernah aku lakukan.
+
+            </p>
+
+            <p class="description">
+                Kedepannya, aku ingin terus belajar, mengembangkan kemampuan,dan mencoba
+                lebih banyak hal baru. Aku percaya setiap pengalaman, sekecil apapun, 
+                bisa menjadi bagian dari proses untuk berkembang.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    🎵 Musik
+                </span>
+
+                <span class="tag">
+                    📚 Membaca
+                </span>
+
+                <span class="tag">
+                    ✈️ Traveling
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONTACT -->
+
+        <section
+            class="card contact"
+            id="contact"
+        >
+
+            <h2 class="card-title">
+                💌 CONTACT
+            </h2>
+
+
+            <div class="contact-list">
+
+
+                <a
+                    href="mailto:amaranatarin@gmail.com"
+                    class="contact-item"
+                >
+
+                    <span class="icon">
+                        📧
+                    </span>
+
+                    <span>
+                        amaranatarin@gmail.com
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="contact-item"
+                >
+
+                    <span class="icon">
+                        📷
+                    </span>
+
+                    <span>
+                        Instagram: @amaranatrn
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="contact-item"
+                >
+
+                    <span class="icon">
+                        💻
+                    </span>
+
+                    <span>
+                        GitHub: github.com/amaranatarin-arch
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Made with ♡ by Amara
+        </p>
+
+    </footer>
+
+</body>
+</html>
