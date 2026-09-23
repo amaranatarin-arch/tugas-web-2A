@@ -1,14 +1,14 @@
 /* membuat body berwarna abu abu dan font arial, sans serif ukuiran 16px */
 body {
-    background-color: #f0f0f0;
+    background-color: #f3e6dc;
     font-family: Arial, sans-serif;
     font-size: 16px;
 }
 
 /* membuat canvas putih ditengah */
 .container {
-    background-color: white;
-    margin: 0 auto;
+    background-color: #fffaf5;
+    margin: auto;
     width: 800px;
 
 }
@@ -18,16 +18,18 @@ body {
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
-
-    
+   
 }
 
+/* specify css elemen */
 .header .judul {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #c9789a;
 }
 
+/* mengatur display inline-block agar bisa diberikan dimensi */
 .nav {
     padding: 0;
 
@@ -43,11 +45,69 @@ body {
 .nav li a {
     /* untuk menghilangkan garis bawah pada link navigasi dan mengatur warna link navigasi */
     text-decoration: none;
-    color: navy;
+    color: #c9789a;
 }
+
 
 /* membuat animasi saat link disorot */
 .nav li a:hover {
-    background-color: orange;
+    background-color: #c9789a;
     color: white;
+}
+
+/* untuk css banner */
+.banner {
+    height: 300px;
+    /* background-color: #f4c2d7; */
+    /* berikan file gambar */
+    background-image: url("../img/banner.jpg");
+    /* mengatur ukuran gambar */
+    background-size: 100% 100%;
+    /* mengatur posisi gambar horizontal dan vertikal  */
+    background-position: center;
+    /* mengatur garis tepi tebal jenis warna */
+    border-top: 5px solid #e79ab5;
+    border-bottom: 5px solid #f7d9e3;
+}
+
+/* untuk isi */
+.isi {
+    padding: 20px;
+}
+
+.isi h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #b5637e
+}
+
+.isi .penulis {
+    font-size: 14px;
+    /* agar agak naik */
+    margin-top: -10px;
+    color: #a58e7f
+}
+
+.isi .penulis a {
+    text-decoration: none;
+    color: #e79ab5;
+}
+
+.isi p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #e79ab5;
+}
+
+/* untuk footer */
+.footer {
+    background-color: #c9789a;
+    height: 50px;
+    padding: 2px;
+}
+
+.footer .copyright {
+    font-size: 16px;
+    color: white;
+    text-align: center;
 }
